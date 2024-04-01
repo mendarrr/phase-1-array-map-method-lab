@@ -11,6 +11,30 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+// Iterate through the characters in a string
+const words = "what does the this keyword mean?".split(" ");
+console.log(words);
+
+// Sentence case on each word
+const capitalizer = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
+
+const capitalizedWords = words.map(capitalizer);
+console.log(capitalizedWords);
+
+// Main function
 const titleCased = () => {
-  return tutorials
-}
+  const capitalizer = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  };
+
+  return tutorials.map((title) => {
+    const words = title.split(" ");
+    const capitalizedWords = words.map(capitalizer);
+    return capitalizedWords.join(" ");
+  });
+};
+
+console.log(titleCased());
+
